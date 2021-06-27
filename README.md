@@ -25,4 +25,4 @@
 6)	Bir müşterinin sipariş verdiği ürün yolda veya tedarikçisinde ise aynı tedarikçiden aynı üründen sipariş veremez.
 
 ## Model
-![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/model.PNG)
+![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/model.png)
