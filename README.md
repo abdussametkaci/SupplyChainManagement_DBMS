@@ -26,3 +26,26 @@
 
 ## Model
 ![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/model.png)
+
+## SQL Sorguları
+1)	ISTANBUL adresindeki tedarikçilerin hava yoluyla taşıdıkları ürünlerin adedini bulunuz
+
+![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/sorgu1.PNG)
+
+2)	Tedarikçisinden mal isteyip malları hala tedarikçisinde olan müşterilerin ürünlerini ve fiyatlarını bulunuz
+
+![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/sorgu2.PNG)
+
+3)	Peşin ödeme ile 10.000 TL üzerinde faturaya sahip tedarikçileri bulunuz
+
+![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/sorgu3.PNG)
+
+## PL SQL Fonksiyonu
+Müşterinin belli bir siparişinde toplam tutarı döndüren fonksiyonu yazınız
+
+![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/sorgu4.PNG)
+
+## PL SQL Tablo Trigger
+Bir müşteri bir tedarikçiden belli sayıda mal sipariş verdiğinde otomatik olarak tedarikçinin mal sayısı sipariş edilen kadar düşürelecektir. Eğer elinde bulunan maldan fazla sipariş verilirse hata dönderilecektir
+
+![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/sorgu5.PNG)
