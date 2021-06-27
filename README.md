@@ -49,3 +49,60 @@ Müşterinin belli bir siparişinde toplam tutarı döndüren fonksiyonu yazın�
 Bir müşteri bir tedarikçiden belli sayıda mal sipariş verdiğinde otomatik olarak tedarikçinin mal sayısı sipariş edilen kadar düşürelecektir. Eğer elinde bulunan maldan fazla sipariş verilirse hata dönderilecektir
 
 ![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/sorgu5.PNG)
+
+# Normalizasyon
+![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/tablo1.PNG)
+
+## Fonksiyonel Bağımlılıklar
+suplier_id -> name, surname, email
+
+product_id -> p_name,description, cost, product_type_id, type
+
+product_type_id -> type
+
+suplier_id, product_id -> name, surname, email, p_name,description, cost, product_type_id, type, quantity
+
+## Birinci Normal Form (1NF)
+Bir tablonun 1. Normal Formda olması için bir kayıttaki tüm alanlar bir anlama sahip veri içermelidir. Yukarıdaki tabloda product_id, p_name, ve cost sütunlarında birden fazla veri tutulduğundan dolayı bu 1. Normal forma aykırıdır. Bunu 1. Normal forma uygun hale getirmek için de satır sayısı artırılmalıdır ve bu sayede her bir sütunda sadece 1 adet veri saklanması sağlanır. Bunu gerçekleştirerek tablonun yeni hali aşağıdaki gibi görünmektedir.
+
+![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/tablo2.PNG)
+
+## İkinci Normal Form (2NF)
+Bir tablonun 2NF’da olması için, 1NF şartlarına ek olarak aday anahtar harici tüm alanlar tüm aday anahtarla tam fonksiyonel bağımlı olmalıdır. Verilen fonksiyonel bağımlılıklara göre tablonun şu anki hali 2. Normal forma aykırıdır. Çünkü suplier_id ve product_id gibi anahtarlarım {suplier_id, product_id} aday anahtarımdaki alt kümelere erişebilmektedir. 
+
+suplier_id -> name, surname, email
+
+product_id -> p_name,description, cost, product_type_id, type
+
+product_type_id -> type
+
+suplier_id, product_id -> quantity
+
+Yeni ilişkiler bu şekilde olmaktadır ve tablolarımı da aşağıdaki gibi bölmekteyim.
+
+![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/tablo3.PNG)
+
+![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/tablo4.PNG)
+
+![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/tablo5.PNG)
+
+## Üçüncü Normal Form (3NF)
+Bir tablonun 3NF’da olması için, 2NF şartlarına ek olarak ilişkisel tabloda tüm alanlar birincil anahtara doğrudan fonksiyonel bağımlı olmalıdır. Birincil anahtar haricindeki alanlar arasında hiç bir fonksiyonel bağımlılık olmamalıdır. Benim belirttiğim ilişkilerde 3. Normal forma ayrıkırı bir durum içermektedir. Çünkü product_type_id doğrudan type sütununa erişebilmektedir. Bu durumda yine tabloları bölmek gerekmektedir.
+
+suplier_id -> name, surname, email
+
+product_id -> p_name,description, cost, product_type_id
+
+product_type_id -> type
+
+suplier_id, product_id -> quantity
+
+Yeni ilişkier yukarıda verildiği gibi olmalıdır ve yeni tablolar aşağıdaki gibidir.
+
+![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/tablo6.PNG)
+
+![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/tablo7.PNG)
+
+![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/tablo8.PNG)
+
+![](https://abdussametkaci.github.io/SupplyChainManagement_DBMS/img/tablo9.PNG)
